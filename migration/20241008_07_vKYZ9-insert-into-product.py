@@ -9,7 +9,7 @@ __depends__ = {'20241008_06_A9fil-insert-into-manufacturer'}
 steps = [
     step(''' 
 INSERT INTO Product (product_id, product_name, manufacturer_id, product_title) VALUES
-(1, 'Гидролаты растений', 1, 'Тоник для лица'),
+(1, 'Гидролаты растений', 8, 'Тоник для лица'),
 (2, '18 colors expert', 2, 'Палетка теней для век'),
 (3, 'Marvel', 3, 'Тушь для ресниц'),
 (4, 'Ночной The Act', 4, 'Крем для лица'),

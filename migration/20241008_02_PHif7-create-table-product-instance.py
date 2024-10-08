@@ -1,3 +1,4 @@
+
 """
 CREATE TABLE Product
 """
@@ -17,4 +18,3 @@ steps = [
     )'''
     )
 ]
-

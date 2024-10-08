@@ -13,4 +13,3 @@ steps = [
     expiration_date DATE
 )''')
 ]
-
