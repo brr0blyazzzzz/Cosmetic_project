@@ -4,7 +4,7 @@ INSERT INTO Product_Structure
 
 from yoyo import step
 
-__depends__ = {'9insert-into-structure','7insert-into-product'}
+__depends__ = {'11insert-into-structure','8insert-into-product'}
 
 steps = [
     step(''' 

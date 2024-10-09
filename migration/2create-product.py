@@ -1,6 +1,6 @@
 
 """
-CREATE TABLE Product
+CREATE TABLE product
 """
 
 from yoyo import step
@@ -9,7 +9,7 @@ __depends__ = {'1create-manufacturer'}
 
 steps = [
     step(''' 
-    CREATE TABLE Product (
+    CREATE TABLE product (
     product_id SERIAL PRIMARY KEY,
     product_name VARCHAR(255) NOT NULL,
     manufacturer_id INT not NULL,
