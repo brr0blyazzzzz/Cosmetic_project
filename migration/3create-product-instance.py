@@ -1,10 +1,11 @@
+
 """
 CREATE TABLE Product_Instance
 """
 
 from yoyo import step
 
-__depends__ = {'20241008_01_NYt5H-create-table-product'}
+__depends__ = {'2create-product'}
 
 steps = [
     step('''

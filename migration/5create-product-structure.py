@@ -1,6 +1,6 @@
 from yoyo import step
 
-depends = {'20241008_01_NYt5H-create-table-product', '20241008_04_UWXvi-create-table-structure'}
+depends = {'2create-product', '4create-structure'}
 
 steps = [
     step('''
@@ -14,5 +14,3 @@ steps = [
     )
     ''')
 ]
-
-

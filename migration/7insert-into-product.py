@@ -4,7 +4,7 @@ INSERT INTO Product
 
 from yoyo import step
 
-__depends__ = {'20241008_06_A9fil-insert-into-manufacturer'}
+__depends__ = {'6insert-into-manufacturer'}
 
 steps = [
     step(''' 

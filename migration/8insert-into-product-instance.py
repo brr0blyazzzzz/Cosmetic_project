@@ -4,7 +4,7 @@ INSERT INTO Product_Instance
 
 from yoyo import step
 
-__depends__ = {'20241008_07_vKYZ9-insert-into-product'}
+__depends__ = {'7insert-into-product'}
 
 steps = [
     step(''' 

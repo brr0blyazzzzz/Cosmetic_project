@@ -1,10 +1,10 @@
 """
-INSERT INTO Product_ Structure
+INSERT INTO Product_Structure
 """
 
 from yoyo import step
 
-__depends__ = {'20241008_09_e0x3W-insert-into-structure','20241008_07_vKYZ9-insert-into-product'}
+__depends__ = {'9insert-into-structure','7insert-into-product'}
 
 steps = [
     step(''' 

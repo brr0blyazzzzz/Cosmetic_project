@@ -5,7 +5,7 @@ CREATE TABLE Product
 
 from yoyo import step
 
-__depends__ = {'20241008_03_hqFJa-create-table-manufacturer'}
+__depends__ = {'1create-manufacturer'}
 
 steps = [
     step(''' 
@@ -18,3 +18,4 @@ steps = [
     )'''
     )
 ]
+
