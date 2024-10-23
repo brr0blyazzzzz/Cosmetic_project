@@ -10,7 +10,7 @@ steps = [
         quantity NUMERIC(3 , 2) CHECK (quantity > 0 AND quantity <= 1),
         PRIMARY KEY (product_id, structure_id),
         FOREIGN KEY (product_id) REFERENCES Product(product_id),
-        FOREIGN KEY (structure_id) REFERENCES Structure(structure_id)
+        FOREIGN KEY (structure_id) REFERENCES structure(structure_id)
     )
     ''')
 ]

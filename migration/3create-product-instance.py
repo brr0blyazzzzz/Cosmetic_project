@@ -13,6 +13,6 @@ steps = [
     instance_id INT PRIMARY KEY,
     expiration_date DATE NOT NULL CHECK (expiration_date > CURRENT_DATE),
     product_id INT NOT NULL,
-    FOREIGN KEY (product_id) REFERENCES Product(product_id)
+    FOREIGN KEY (product_id) REFERENCES product(product_id)
 )''')
 ]

@@ -14,7 +14,7 @@ steps = [
     product_name VARCHAR(255) NOT NULL,
     manufacturer_id INT not NULL,
     product_title VARCHAR(255) NOT NULL,
-    FOREIGN KEY (manufacturer_id) REFERENCES Manufacturer(manufacturer_id)
+    FOREIGN KEY (manufacturer_id) REFERENCES manufacturer(manufacturer_id)
     )'''
     )
 ]
