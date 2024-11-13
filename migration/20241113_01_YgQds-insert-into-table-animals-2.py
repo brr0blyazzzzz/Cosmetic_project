@@ -1,7 +1,3 @@
-"""
-insert_into_animals_2
-"""
-
 from yoyo import step
 
 depends = {'20241104_01_JxoHp-create-table-animals_2'}
@@ -34,5 +30,14 @@ steps = [
          "(24,'Немецкая овчарка', 'Порода собак, изначально использовалась в качестве пастушьей собаки', '1/2/6/24/'),"
          "(25,'Британская вислоухая кошка', 'Часто ленивые коты с очень мягкой шерстью', '1/2/7/25/'),"
          "(26,'Американский лабладор', 'Чуть выше, чем Европейский лабрадор', '1/2/6/15/26/')"
+    ),
+    step(
+        "DO $$ "
+        "DECLARE "
+        "    max_id INTEGER; "
+        "BEGIN "
+        "    SELECT COALESCE(MAX(id), 0) INTO max_id FROM animals_2; "
+        "    EXECUTE 'ALTER SEQUENCE animals_2_id_seq RESTART WITH ' || (max_id + 1); "
+        "END $$;"
     ),
 ]
