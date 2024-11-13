@@ -59,8 +59,9 @@ class AnimalTree:
         parent_path = self.cursor.fetchone()
         if parent_path:
             parent_path = parent_path[0]
-            path_pattern = f"{parent_path}%"
-            self.cursor.execute("SELECT * FROM animals_2 WHERE path LIKE %s", (path_pattern,))
+            path_pattern = f"{parent_path}%/"
+            self.cursor.execute("SELECT * FROM animals_2 WHERE path LIKE %s AND path NOT LIKE %s",
+                                (path_pattern, f"{path_pattern}%/%"))
             return self.cursor.fetchall()
 
         return []
@@ -147,7 +148,7 @@ def get_valid_int(prompt):
                 if exists:
                     return num
                 else:
-                    print("Такого числа не существует в базе данных.")
+                    print("Такого узла нет в базе данных.")
             else:
                 print("Пожалуйста, введите корректное положительное целое число.")
         else:
@@ -168,10 +169,10 @@ def main():
     while True:
         print("Меню:")
         print("1. Добавить животное")
-        print("2. Удалить узел по ID")
-        print("3. Удалить поддерево по ID родителя")
+        print("2. Удалить лист по ID")
+        print("3. Удалить поддерево по ID узла")
         print("4. Удалить узел без поддерева по ID узла")
-        print("5. Получить прямых детей по ID родителя")
+        print("5. Получить прямых детей по ID узла")
         print("6. Получить прямого родителя по ID узла")
         print("7. Получить всех потомков по ID узла")
         print("8. Получить всех предков по ID узла")
@@ -202,15 +203,17 @@ def main():
             print("Узел удален.")
 
         elif choice == 5:
-            parent_id = get_valid_int("Введите ID родителя для получения детей: ")
+            parent_id = get_valid_int("Введите ID узла для получения детей: ")
             children = animal_tree.get_direct_children(parent_id)
+            isc = animal_tree.get_element(parent_id)
+            print(f"Иcходный узел: '{isc[0]}', '{isc[1]}', '{isc[2]}','{isc[3]}'")
             if children:
-                print("Исходный узел: " + f"'{children[0][0]}', " + f"{children[0][1]}, " + f"{children[0][2]}, " + f""
-                                                                                                            f"{children[0][3]}")
-                children.pop(0)
                 print("Прямые дети:")
                 for child in children:
-                    print(f"'{child[0]}', '{child[2]}', '{child[3]}'")
+                    if (child[0] < 10):
+                        print(f"'{child[0]}'," + f"  " + f"'{child[1]}', '{child[2]}'")
+                    else:
+                        print(f"'{child[0]}', '{child[1]}', '{child[2]}'")
             else:
                 print("У данного родителя нет детей.")
 
@@ -226,9 +229,13 @@ def main():
 
             print(f"Исходный узел: {result}")
             print("Все потомки:")
-            for descendant, level in descendants:
-                print(f"'{descendant[0]}'" + " " * (level * 4) + f"'{descendant[1]}','{descendant[2]}'")
 
+            for descendant, level in descendants:
+                if int(descendant[0]) > 9:
+                    indent = " " * (level * 4 - 1)
+                else:
+                    indent = " " * (level * 4)
+                print(f"'{descendant[0]}'" + f"{indent}" + f"'{descendant[1]}', '{descendant[2]}'")
         elif choice == 8:
             node_id = get_valid_int("Введите ID узла для получения предков: ")
             ancestors = animal_tree.get_all_ancestors(node_id)
@@ -236,7 +243,11 @@ def main():
             print(f"Исходный узел: {result}")
             print("Все предки:")
             for ancestor, level in ancestors:
-                print(f"'{ancestor[0]}'" + " " *(abs(level + 4) * 4) + f"'{ancestor[1]}', '{ancestor[2]}'")
+                if int(ancestor[0]) > 9:
+                    indent = " " * (abs(level + 4) * 4 - 1)
+                else:
+                    indent = " " * (abs(level + 4) * 4)
+                print(f"'{ancestor[0]}'" + f"{indent}" + f"'{ancestor[1]}', '{ancestor[2]}'")
 
         elif choice == 9:
             break
