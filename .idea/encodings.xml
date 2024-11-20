@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/migration/20241120_02_M8DLC-update-manufacturer.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/migration1/20241114_01_b0P8a-add-manufacturer.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/migration1/20241114_02_BXpV5-get-all-manufacturers.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/migration1/20241114_03_qAvJX-get-manufacturers-by-id.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/migration1/20241114_04_4ypTh-delete-manufactures.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/migration1/20241114_05_EzYCC-delete-manufacturer.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/migration1/20241114_06_M1pB2-update-manufacturer.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/yoyo.ini" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
