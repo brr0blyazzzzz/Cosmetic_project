@@ -1,8 +1,10 @@
 AnimalsOperations_2.py
 AnimalsOperations_3.py
 CRUD.py
-AnimalsOperations_2.py
-migration
-migration_for_animals
-migration_for_performances
 CRUD_PROCEDURES.py
+AnimalsOperations_2.py
+migration/
+migration_for_animals/
+migration_for_performances/
+migration_for_triggers/
+
