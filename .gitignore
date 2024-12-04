@@ -1,10 +1,13 @@
+# Игнорируем файлы операций с животными
 AnimalsOperations_2.py
 AnimalsOperations_3.py
+
+# Игнорируем файлы CRUD
 CRUD.py
 CRUD_PROCEDURES.py
-AnimalsOperations_2.py
+
+# Игнорируем директории миграции
 migration/
 migration_for_animals/
 migration_for_performances/
 migration_for_triggers/
-
