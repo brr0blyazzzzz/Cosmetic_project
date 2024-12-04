@@ -17,8 +17,8 @@ steps = [
                 m.title_name,
                 m.title_country,
                 m.contact_list,
-                COUNT(DISTINCT p.product_id) AS total_products,
-                DENSE_RANK() OVER (ORDER BY COUNT(DISTINCT p.product_id) DESC) AS product_rank
+                COUNT(pi.product_id) AS total_products,
+                DENSE_RANK() OVER (ORDER BY COUNT(pi.product_id) DESC) AS product_rank
          FROM manufacturer m
          LEFT JOIN product p ON m.manufacturer_id = p.manufacturer_id
          LEFT JOIN product_instance pi ON p.product_id = pi.product_id
