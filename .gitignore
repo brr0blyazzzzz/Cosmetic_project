@@ -10,4 +10,6 @@ CRUD_PROCEDURES.py
 migration/
 migration_for_animals/
 migration_for_performances/
-migration_for_triggers/
+migration_for_performance/
+.idea/
+triggers/__pycahce__/
