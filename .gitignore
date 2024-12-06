@@ -7,9 +7,9 @@ CRUD.py
 CRUD_PROCEDURES.py
 
 # Игнорируем директории миграции
-migration/
-migration_for_animals/
-migration_for_performances/
-migration_for_performance/
-.idea/
-triggers/__pycahce__/
+/migration/
+/migration_for_animals/
+/migration_for_performances/
+/migration_for_performance/
+/.idea/
+

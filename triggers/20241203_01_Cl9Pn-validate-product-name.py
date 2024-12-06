@@ -20,9 +20,6 @@ steps = [
             AS $function$
             BEGIN
                 NEW.product_name := trim(NEW.product_name);
-                IF NEW.product_name = '' THEN
-                    RAISE EXCEPTION 'product_name cannot be empty';
-                END IF;
                 NEW.product_name := initcap(NEW.product_name);
                 RETURN NEW;
             END;
